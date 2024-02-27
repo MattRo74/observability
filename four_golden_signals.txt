@@ -1,0 +1,25 @@
+Latency — The time taken to serve a request (usually measured in ms).
+Traffic — The amount of stress on a system from demand (such as the number of HTTP requests/second).
+Errors — The number of requests that are failing (such as number of HTTP 500 responses).
+Saturation — The overall capacity of a service (such as the percentage of memory or CPU used).
+
+SLO:
+
+Def.: A Service-Level Objective (SLO) is a measurable goal set by the SRE team to ensure a standard level of performance during a specified period of time.
+Example: 99.99% uptime per month
+
+Here is a process you can follow to help ensure your SLOs are customer-centric:
+
+-Do what a user would do. You will want to stress test the product and use it the same way the user would.
+-Map the journey to services. Once you understand the customer journey, you can map out what that journey looks like in terms of what specific services are used.
+-Find the metrics. Once you know what services are involved, you can identify the metrics for those services.
+-Determine goals. Once we have relevant metrics in mind, it is relatively easy to determine what goals would be reasonable and would tap into these metrics.
+-Design formal SLOs. Once you have your goals, it's time to formalize them as SLOs. These SLOs will then appear in your team charter, and you and your team will have a clear objective that you can be accountable for.
+
+
+SLI:
+
+Def: A Service-Level Indicator (SLI) is a specific metric used to measure the performance of a service.
+Sometimes the term SLI is used to refer to the general metric—such as uptime or latency. But really what we need in the end is an actual measurement. 
+Example: The application will have an uptime of 99.9% during the next year.
+-> ratios

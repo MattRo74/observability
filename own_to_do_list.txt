@@ -1,0 +1,18 @@
+1. Create and rename project folder "Observability" (okay)
+2. Change vagrant file (name: observability) and start "vagrant up" (okay)
+3. Install Helm (okay)
+4. kubectl create namespace monitoring (okay)
+5. Install Prometheus and Grafana in namespace monitoring (okay)
+6. Verify Pod and Services in namespace monitoring (okay)
+    kubectl get pods,svc -n monitoring
+7. Login to http://127.0.0.1:3000/login(okay)
+8. Installing Jaeger in namespace observability (following steps)
+9. kubectl create namespace observability (okay)
+10. Installation of Jaeger Operator Version 1.80.0 (okay)
+11. Enable the cluster-wide permissions
+12. Verify Deployments, Pods and Services in namespace observability (okay)
+    kubectl get deployment  -n observability
+    kubectl get pods,svc -n observability
+
+
+
