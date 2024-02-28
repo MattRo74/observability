@@ -7,3 +7,6 @@ jaeger-client==4.3.0
 Jinja2==3.0.3
 itsdangerous==2.0.1
 Werkzeug==2.0.2
+opentracing==2.4.0
+Flask-OpenTracing==1.1.0
+jaeger-client==4.3.0
