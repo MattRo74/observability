@@ -7,12 +7,8 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
 
-
-# Create ENV /tmp/prometheus-multiproc
-ENV PROMETHEUS_MULTIPROC_DIR /tmp/prometheus-multiproc
-
-RUN rm -rf /tmp/prometheus-multiproc
-RUN mkdir -p /tmp/prometheus-multiproc
+ARG PROJECT_ID
+ENV PROJECT_ID ${PROJECT_ID}
 
 
 # Install production dependencies.

@@ -13,6 +13,8 @@
 12. Verify Deployments, Pods and Services in namespace observability (okay)
     kubectl get deployment  -n observability
     kubectl get pods,svc -n observability
+13. Auto-injecting Jaeger Agent Sidecars, a sample application, into every worker (okay)
+14. Install the python application 
 
 
 

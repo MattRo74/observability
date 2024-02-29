@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
 
     vb.memory = "4096"
     #vb.memory = "2048"
-    vb.name = "observability"
+    vb.name = "obv1"
   end
   #
   # View the documentation for the provider you are using for more

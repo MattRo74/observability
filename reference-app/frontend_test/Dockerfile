@@ -7,14 +7,6 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
 
-
-# Create ENV /tmp/prometheus-multiproc
-ENV PROMETHEUS_MULTIPROC_DIR /tmp/prometheus-multiproc
-
-RUN rm -rf /tmp/prometheus-multiproc
-RUN mkdir -p /tmp/prometheus-multiproc
-
-
 # Install production dependencies.
 RUN apt-get update && \
     pip install --upgrade pip && \
