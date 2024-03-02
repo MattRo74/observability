@@ -105,25 +105,27 @@ kubectl port-forward -n observability  service/simplest-query --address 0.0.0.0 
 
 (to start see steps above)
 
-
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/report_error.png">
 
 
 ## Report Error
 *TODO:* Using the template below, write a trouble ticket for the developers, to explain the errors that you are seeing (400, 500, latency) and to let them know the file that is causing the issue also include a screenshot of the tracer span to demonstrate how we can user a tracer to locate errors easily.
 
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/errortrace.png">
+
 TROUBLE TICKET
 
-Name:
+Name: HTTP request with error
 
-Date:
+Date: March 2 2024, 23:26:31.701
 
-Subject:
+Subject: Alert in Grafana: Increasing number of errors regarding HTTP requests
 
-Affected Area:
+Affected Area: File "/app/app.py", line 92, in errortrace
 
-Severity:
+Severity: high
 
-Description:
+Description: raise InvalidHandle('Internal Error', status_code=500)
 
 
 ## Creating SLIs and SLOs
@@ -148,7 +150,7 @@ Description:
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
-**CPU Usage:** Average CPU Usage -> KPI to check the status our environment (scaling issue)
+**CPU Usage:** Average CPU Usage -> KPI to check the status of our environment (scaling issue)
 
 **Latency:** Sum of HTTP request in seconds -> the time for response should as short as possible for the costumer
 
