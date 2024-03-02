@@ -95,7 +95,7 @@ kubectl port-forward -n observability  service/simplest-query --address 0.0.0.0 
 
 ** Tracing and Span in Python-Script
 
-<img src="https://github.com/MattRo74/observability/blob/main/answer-img/tracing_int.png">
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/tracing_init.png">
 
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/tracing_span.png">
 
@@ -162,4 +162,4 @@ Description:
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 
 
-<img src="https://github.com/MattRo74/observability/blob/main/answer-img/tracing_span.png">
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/final_dashboard.png">
