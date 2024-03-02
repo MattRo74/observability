@@ -17,4 +17,8 @@
 14. Install the python application 
 
 
+mongo:
+helm install mongodb --set auth.rootPassword=password,auth.username=matt,auth.password=password1,auth.database=example-mongodb bitnami/mongodb --kubeconfig /etc/rancher/k3s/k3s.yaml
+
+
 

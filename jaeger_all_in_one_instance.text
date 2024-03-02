@@ -1,3 +1,6 @@
+Auto-injecting Jaeger Agent Sidecars, a sample application, into every worker:
+kubectl apply -f https://raw.githubusercontent.com/jaegertracing/jaeger-operator/${jaeger_version}/examples/business-application-injected-sidecar.yaml
+
 When you have the Jaeger Operator deployed in the observability namespace, create a Jaeger instance:
 
 https://github.com/jaegertracing/jaeger-operator#getting-started

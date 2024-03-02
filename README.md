@@ -64,11 +64,11 @@ kubectl --namespace monitoring port-forward svc/prometheus-grafana --address 0.0
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
 step to start:
-Backend Service:  kubectl port-forward svc/backend-service --address 0.0.0.0 8081:8081 (http://localhost:8081)
-Frontend Service: kubectl port-forward svc/frontend-service --address 0.0.0.0 8080:8080 (http://localhost:8080)
+Backend Service:  kubectl port-forward svc/backend-service --address 0.0.0.0 8080:8080 (http://localhost:8080)
+Frontend Service: kubectl port-forward svc/frontend-service --address 0.0.0.0 9090:9090 (http://localhost:9090)
+Grafana: kubectl -n monitoring port-forward service/prometheus-grafana --address 0.0.0.0 3000:80 --namespace monitoring (http:/localhost:3000)
 
-Grafana: 
-
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/dashboard_slis.png">
 
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.

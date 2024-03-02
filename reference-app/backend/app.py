@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
-import time
-import random
+#import time
+#import random
 import pymongo
 from flask_pymongo import PyMongo
 from prometheus_flask_exporter import PrometheusMetrics
@@ -47,10 +47,6 @@ class InvalidHandle(Exception):
         error_message['message'] = self.message
         return error_message
 
-@app.route('/error')
-@by_endpoint_counter
-def oops():
-    return ':(', 500
 
 def init_tracer(service):
     logging.getLogger('').handlers = []
@@ -79,10 +75,22 @@ def handle_invalid_usage(error):
     response.status_code = error.status_code
     return response
 
+@app.route('/error')
+@by_endpoint_counter
+def oops():
+    return ':(', 500
+
 @app.route('/foo')
 @by_endpoint_counter
 def get_error():
     raise InvalidHandle('error occur', status_code=410)
+
+@app.route('/errortrace')
+@by_endpoint_counter
+def errortrace():
+    with tracer.start_span('errortrace'):
+        raise InvalidHandle('Internal Error', status_code=500)
+
 
 @app.route('/')
 @by_endpoint_counter
