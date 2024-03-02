@@ -130,33 +130,31 @@ Description:
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
 
 **Availability:**
-- more than 99.95% Uptime per month (SLO)
-- xxx (SLI)
+- more than 99.95% uptime per month (SLO)
+- the application was 98% of the time available last month (SLI)
 
 **Errors:**
 - less than 0.03% failed request per month  (SLO)
-- xxx (SLI)
+- the error rate was 0,04% last month (SLI)
 
 **Request Latency:**
-- average request time for successful HTTP requests is less than xxx per month (SLO)
-- xxx (SLI)
+- average request time for successful HTTP requests is less than 1.5 seconds per month (SLO)
+- the average request time for succesful HTTP request was 1.14 seconds last month (SLI)
 
 **CPU Usage:**
-- Monthly CPU Usage (SLO)
-- xxx (SLI)
+- average monthly CPU Usage is less than 50% (SLO)
+- the average CPU Usage was 45% last month (SLI)
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
-**Latency:** 
+**Avg CPU Usage:** Average CPU Usage in seconds
 
-**Uptime Backend/Uptime Backend**
+**Latency:** Sum of HTTP request time (in seconds) with error code 200 or 500
 
-**CPU Usage:**
+**Uptime Backend/Uptime Backend** Uptime  of container frontend and backend
 
-**Errors (4xx and 5xx):**
--request time for successful HTTP requestss
--request time for failed HTTP requests
+**Errors (4xx and 5xx):** Sum of HTTP requests with error code 200 (success) or 500 (failure)
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
