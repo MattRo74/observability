@@ -66,18 +66,46 @@ kubectl --namespace monitoring port-forward svc/prometheus-grafana --address 0.0
 step to start:
 Backend Service:  kubectl port-forward svc/backend-service --address 0.0.0.0 8080:8080 (http://localhost:8080)
 Frontend Service: kubectl port-forward svc/frontend-service --address 0.0.0.0 9090:9090 (http://localhost:9090)
-Grafana: kubectl -n monitoring port-forward service/prometheus-grafana --address 0.0.0.0 3000:80 --namespace monitoring (http:/localhost:3000)
+Grafana: kubectl -n monitoring port-forward service/prometheus-grafana --address 0.0.0.0 3000:80 (http:/localhost:3000)
 
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/dashboard_slis.png">
 
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here. Also provide a (screenshot) sample Python file containing a trace and span code used to perform Jaeger traces on the backend service.
 
+> localhost:/home/vagrant # kubectl get -n observability ingresses.v1.networking.k8s.io -o yaml | tail
+>         port:
+>           number: 16686
+>   status:
+>     loadBalancer:
+>       ingress:
+>       - ip: 10.0.2.15
+> kind: List
+> metadata:
+>  resourceVersion: ""
+>  selfLink: ""
+
+kubectl port-forward -n observability  service/simplest-query --address 0.0.0.0 16686:16686 (http://localhost:8088)
+
+
+** Jaeger Tracing
+
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/jaeger_tracing.png">
+
+
+** Tracing and Span in Python-Script
+
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/tracing_int.png">
+
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/tracing_span.png">
+
+
 ## Jaeger in Dashboards
 *TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.
 
-steps to start:
-Jaeger: kubectl port-forward -n observability  service/simplest-query --address 0.0.0.0 16686:16686
+(to start see steps above)
+
+
 
 
 ## Report Error
@@ -101,8 +129,37 @@ Description:
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
 
+**Availability:**
+- more than 99.95% Uptime per month (SLO)
+- xxx (SLI)
+
+**Errors:**
+- less than 0.03% failed request per month  (SLO)
+- xxx (SLI)
+
+**Request Latency:**
+- average request time for successful HTTP requests is less than xxx per month (SLO)
+- xxx (SLI)
+
+**CPU Usage:**
+- Monthly CPU Usage (SLO)
+- xxx (SLI)
+
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
+**Latency:** 
+
+**Uptime Backend/Uptime Backend**
+
+**CPU Usage:**
+
+**Errors (4xx and 5xx):**
+-request time for successful HTTP requestss
+-request time for failed HTTP requests
+
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
+
+
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/tracing_span.png">
