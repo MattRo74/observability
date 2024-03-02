@@ -148,16 +148,28 @@ Description:
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
-**Avg CPU Usage:** Average CPU Usage in seconds
+**CPU Usage:** Average CPU Usage -> KPI to check the status our environment (scaling issue)
 
-**Latency:** Sum of HTTP request time (in seconds) with error code 200 or 500
+**Latency:** Sum of HTTP request in seconds -> the time for response should as short as possible for the costumer
 
-**Uptime Backend/Uptime Backend** Uptime  of container frontend and backend
+**Uptime** Uptime of container frontend and backend -> the app should be almost 100% available for the customer
 
-**Errors (4xx and 5xx):** Sum of HTTP requests with error code 200 (success) or 500 (failure)
+**Errors:** Sum of HTTP requests with an error code ->  KPI to check the the status of our environment (code problems)
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 
 
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/final_dashboard.png">
+
+**Avg CPU Usage:** Average CPU Usage in seconds
+
+**Latency:** Sum of HTTP request time (in seconds) with error code 200 and 500
+
+**Uptime Frontend** Uptime of the frontend container
+
+**Uptime Backend** Uptime of the backend container
+
+**Errors 4xx:** Sum of HTTP requests with an 400 error code
+
+**Errors 5xx:** Sum of HTTP requests with an 500 error code
