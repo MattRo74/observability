@@ -30,8 +30,18 @@
 
 kubectl --namespace monitoring port-forward svc/prometheus-grafana --address 0.0.0.0 3000:80
 
-
+**Basic Dashboard - Grafana Mainpage**
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/basic_dashboard.png">
+
+**Basic Dashboard - Prometheus Datasource**
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/prometheus_datasource.png">
+
+**Basic Dashboard - Prometheus Datasource Settings**
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/prometheus_datasource_settings.png">
+
+**Basic Dashboard - Prometheus Datasource Explorer**
+<img src="https://github.com/MattRo74/observability/blob/main/answer-img/prometheus_datasource_explore.png">
+
 
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
