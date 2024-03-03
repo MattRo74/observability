@@ -23,23 +23,29 @@
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
 
+**Basic Dashboard - Grafana Mainpage**
+
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/grafana_homepage.png">
 	
-## Create a Basic Dashboard
+## Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
 
 kubectl --namespace monitoring port-forward svc/prometheus-grafana --address 0.0.0.0 3000:80
 
 **Basic Dashboard - Grafana Mainpage**
+-> Existing Dashboard with Prometheus as (default) datasource
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/basic_dashboard.png">
 
 **Basic Dashboard - Prometheus Datasource**
+-> look for Prometheus as data source
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/prometheus_datasource.png">
 
 **Basic Dashboard - Prometheus Datasource Settings**
+-> you can look into the settings
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/prometheus_datasource_settings.png">
 
 **Basic Dashboard - Prometheus Datasource Explorer**
+-> one way to create a dashboard is to choose "explore" and start the visualization
 <img src="https://github.com/MattRo74/observability/blob/main/answer-img/prometheus_datasource_explore.png">
 
 
